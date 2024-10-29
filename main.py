@@ -3,7 +3,7 @@ import asyncio
 from llama_index.core.memory import ChatMemoryBuffer
 from llama_index.core.tools import BaseTool
 from llama_index.core.workflow import Context
-from llama_index.llms.openai import OpenAI
+from llama_index.llms.ollama import Ollama
 
 from workflow import (
     AgentConfig,
@@ -234,7 +234,7 @@ async def main():
 
     from colorama import Fore, Style
 
-    llm = OpenAI(model="gpt-4o", temperature=0.4)
+    llm = Ollama(model="llama3.1:70b-instruct-q4_0", temperature=0.4)
     memory = ChatMemoryBuffer.from_defaults(llm=llm)
     initial_state = get_initial_state()
     agent_configs = get_agent_configs()

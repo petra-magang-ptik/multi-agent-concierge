@@ -3,3 +3,5 @@ poc.py
 lib
 .mypy_cache
 .ruff_cache
+.ipynb_checkpoints
+__pycache__
